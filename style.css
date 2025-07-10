@@ -51,3 +51,46 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
+//aqui eu estou sobrescrevendo o estilo do bootstrap
+
+.navbar,
+.navbar.bg-body-tertiary,
+.navbar-light,
+.navbar-white {
+  background-color: #535151 !important;
+  border-bottom: 1px solid #171616;
+}
+
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: #00ffff !important;
+}
+
+nav.navbar.bg-body-tertiary {
+  background-color: gray !important;
+}
+
+.form-control {
+  background-color: gray !important;
+  color: #fff !important;
+  border: 1px solid #323232 !important;
+}
+
+.btn {
+  color: #343434 !important;
+  border-color: #323232 !important;
+}
+
+.btn-outline-success {
+    /* --bs-btn-color: #198754; */
+    /* --bs-btn-border-color: #198754; */
+    --bs-btn-hover-color: #b9b9b9;
+    --bs-btn-hover-bg: #ffffff;
+}
