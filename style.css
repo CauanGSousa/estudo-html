@@ -4,5 +4,50 @@ body {
 }
 
 #titulo {
-  color: red;
+  color: cyan;
+}
+
+.background-red {
+  background-color: red;
+  padding: 20px;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+.coluna-12 {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.coluna-6 {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.coluna-4 {
+  width: 33.33%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.coluna-3 {
+  width: 25%;
+  box-sizing: border-box;
+}
+
+.coluna-2 {
+  width: 16.66%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.coluna-1 {
+  width: 8.33%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.linha {
+  display: flex;
+  flex-wrap: wrap;
 }
