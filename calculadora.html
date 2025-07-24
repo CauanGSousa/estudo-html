@@ -15,49 +15,61 @@
 
   <body>
     <div class="container text-center">
-      <div class="row">
-        <div class="col-sm-4 number">7</div>
-        <div class="col-sm-4 number">8</div>
-        <div class="col-sm-4 number">9</div>
+      <div>
+        <h1 id="visor">Calculadora</h1>
       </div>
-      <div class="row">
-        <div class="col-sm-4 number">4</div>
-        <div class="col-sm-4 number">5</div>
-        <div class="col-sm-4 number">6</div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 number">1</div>
-        <div class="col-sm-4 number">2</div>
-        <div class="col-sm-4 number">3</div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 btn">+</div>
-        <div class="col-sm-4 number">0</div>
-        <div class="col-sm-4 btn">=</div>
+      <div class="botoes">
+        <div class="row">
+          <div class="col-sm-4 number">7</div>
+          <div class="col-sm-4 number">8</div>
+          <div class="col-sm-4 number">9</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 number">4</div>
+          <div class="col-sm-4 number">5</div>
+          <div class="col-sm-4 number">6</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 number">1</div>
+          <div class="col-sm-4 number">2</div>
+          <div class="col-sm-4 number">3</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 btn">+</div>
+          <div class="col-sm-4 number">0</div>
+          <div class="col-sm-4 btn">-</div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <button class="btn">=</button>
+          </div>
       </div>
     </div>
   </body>
 </html>
+<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <script>
-  const numbers = document.querySelectorAll(".number");
-  const buttons = document.querySelectorAll(".btn");
-  let numeroguardado = [];
-  let numerosomar = [];
-  numbers.forEach((number) => {
-    number.addEventListener("click", () => {
-      numeroguardado.push(number.textContent);
-      console.log(numeroguardado, "Números guardados");
-    });
+  const numerosdigitados = [];
+  let visorvar = "";
+  $(".number").click(function () {
+    numerosdigitados.push($(this).text());
+    visorvar = numerosdigitados.join("");
+    $("#visor").text(visorvar);
   });
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.textContent === "+") {
-        const resultado = eval(numeroguardado.join(""));
-       numerosomar.push(resultado);
-        numeroguardado = [];
-      } else {
-        console.log(numerosomar, "Resultado da soma");
-      }
-    });
+  $(".btn").click(function () {
+    if ($(this).text() === "+") {
+      numerosdigitados.push("+");
+      visorvar = numerosdigitados.join("");
+      $("#visor").text(visorvar);
+    }
+    else if ($(this).text() === "-") {
+      numerosdigitados.push("-");
+      visorvar = numerosdigitados.join("");
+      $("#visor").text(visorvar);
+    } 
+    else {
+       const resultado = eval(visorvar);
+        $("#visor").text(resultado);
+    }
   });
 </script>

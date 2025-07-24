@@ -52,7 +52,7 @@ body {
   flex-wrap: wrap;
 }
 
-//aqui eu estou sobrescrevendo o estilo do bootstrap
+aqui eu estou sobrescrevendo o estilo do bootstrap
 
 .navbar,
 .navbar.bg-body-tertiary,
@@ -105,3 +105,7 @@ nav.navbar.bg-body-tertiary {
   cursor: pointer;
 }
 
+.botoes {
+  width: 276px;
+  margin: 0 auto;
+}
